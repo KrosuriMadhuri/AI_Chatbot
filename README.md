@@ -1,4 +1,27 @@
-## Project Structure:
+# AI_Chatbot
+
+# AI Medical Chatbot for Disease Prediction and Personalized Recommendations
+
+---
+
+## Project Description
+
+The goal is to design and implement an **AI-powered medical chatbot** that:
+
+Guides users through a **structured Q&A flow**  
+Predicts **possible diseases** based on symptoms  
+Provides **personalized recommendations**, including:  
+- Over-the-counter (OTC) medications  
+- Home remedies  
+- Physician referral  
+- Emergency care instructions  
+
+Uses **dynamic question prioritization**  
+Focuses on **safety-first and explainability**  
+
+---
+
+## Project Structure
 
 ```text
 /medical_chatbot_project
