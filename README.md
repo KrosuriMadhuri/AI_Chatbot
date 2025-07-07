@@ -1,45 +1,32 @@
-# AI Medical Chatbot for Disease Prediction and Personalized Recommendations
+# 🏥 Generative AI Healthcare Chatbot
+
+A **secure, ethical, and modular medical chatbot** powered by Zephyr-7B (via Hugging Face API), Django, and MySQL.  
+This project demonstrates how Generative AI can assist with **preliminary symptom checking, health education, and drug information**, while embedding privacy, bias detection, and audit safeguards.
 
 ---
 
-## Project Description
+## 🚀 Features
 
-The goal is to design and implement an **AI-powered medical chatbot** that:
-
-Guides users through a **structured Q&A flow**  
-Predicts **possible diseases** based on symptoms  
-Provides **personalized recommendations**, including:  
-- Over-the-counter (OTC) medications  
-- Home remedies  
-- Physician referral  
-- Emergency care instructions  
-
-Uses **dynamic question prioritization**  
-Focuses on **safety-first and explainability**  
+✅ **User authentication & secure access** (Django Auth)  
+✅ **Symptom checker & drug info assistant** powered by Zephyr-7B  
+✅ **Pre-processing:** disclaimers, de-identification of input  
+✅ **Post-processing:** rule-based bias detection, response formatting  
+✅ **Secure logging** (MySQL backend, no PII stored)  
+✅ **Modular & extensible design** (ready for future EHR / telemedicine integration)  
 
 ---
 
-## Project Structure
+## ⚙️ Tech Stack
 
-```text
-/medical_chatbot_project
-├── data/
-│   ├── SymptomsOutput.json                <-- original
-│   ├── SymptomsOutput_updated.json        <-- with user_question (simple)
-│   ├── DiseasesOutput.json
-│   ├── DiseasesOutput_updated.json
-│   ├── symptomsDisease246k.json           <-- used for Embedding Matcher / Classifier
-│
-├── app/
-│   ├── __init__.py
-│   ├── qna_engine.py
-│   ├── priority_controller.py
-│   ├── disease_scoring.py
-│   ├── recommendation_engine.py
-│   ├── response_formatter.py
-│   ├── embedding_matcher.py               <-- Phase 2.2
-│
-├── generate_user_questions.py             <-- Phase 2.1
-├── main.py                                <-- Phase 2 READY
-├── requirements.txt
-└── README.md
+| Component       | Technology           |
+|-----------------|---------------------|
+| **LLM**         | Zephyr-7B (Hugging Face API) |
+| **Web Framework**| Django               |
+| **Database**     | MySQL                |
+| **Frontend**     | Django templates + CSS |
+| **Pre/Post-Processing** | Python + spaCy |
+
+---
+
+## 🗂 Project Structure
+
