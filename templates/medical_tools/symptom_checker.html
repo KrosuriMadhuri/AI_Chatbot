@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h3>🩺 Symptom Checker</h3>
+  <form method="post">{% csrf_token %}
+    <textarea name="symptoms" rows="4" class="form-control mb-3" placeholder="e.g., fever, cough, headache..." required></textarea>
+    <button class="btn btn-success w-100">Analyze Symptoms</button>
+  </form>
+
+  {% if symptoms and response %}
+  <div class="mt-4">
+    <div class="p-3 bg-light rounded mb-2"><strong>Your Input:</strong> {{ symptoms }}</div>
+    <div class="p-3 bg-warning-subtle border rounded"><strong>AI Suggestion:</strong><br> {{ response }}</div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

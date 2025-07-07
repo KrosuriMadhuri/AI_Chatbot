@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h3 class="mb-3">🧠 AI Medical Assistant</h3>
+
+  <form method="post">
+    {% csrf_token %}
+    <textarea name="prompt" class="form-control mb-3" rows="3" placeholder="Ask a medical question..." required></textarea>
+    <button class="btn btn-primary w-100">Ask AI</button>
+  </form>
+
+  {% if user_prompt and response %}
+  <div class="mt-4">
+    <div class="p-3 bg-light rounded mb-2"><strong>You:</strong> {{ user_prompt }}</div>
+    <div class="p-3 bg-success text-white rounded"><strong>AI:</strong> {{ response }}</div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

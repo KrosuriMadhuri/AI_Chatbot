@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GenAI Healthcare</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #173c0e;">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">GenAI Health</a>
+    <ul class="navbar-nav ms-auto">
+
+      {% if request.user.is_authenticated %}
+        {% if request.user.is_staff %}
+          <!-- 👨‍💼 Admin-specific links -->
+          <li class="nav-item"><a class="nav-link" href="{% url 'admin_dashboard' %}">Admin Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'user_management' %}">User Management</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'chat_management' %}">Chat Management</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'admin_logout' %}">Logout</a></li>
+        {% else %}
+          <!-- 🧑‍⚕️ Normal user links -->
+          <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ai_chat' %}">AI Assistant</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'symptom_checker' %}">Symptom Checker</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'drug_info' %}">Drug Info</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+        {% endif %}
+      {% else %}
+        <!-- 🔐 Not logged in -->
+        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+      {% endif %}
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  {% block content %}
+  {% endblock %}
+</div>
+</body>
+</html>

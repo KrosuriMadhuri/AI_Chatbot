@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Welcome, {{ request.user.username }} 👋</h3>
+<p>Start using AI tools from the navbar or dashboard links.</p>
+<ul>
+  <li><a href="{% url 'ai_chat' %}">🧠 AI Assistant</a></li>
+  <br>
+  <li><a href="{% url 'symptom_checker' %}">🩺 Symptom Checker</a></li>
+  <br>
+  <li><a href="{% url 'drug_info' %}">💊 Drug Info Generator</a></li>
+</ul>
+{% endblock %}

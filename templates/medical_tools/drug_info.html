@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h3>💊 Drug Information Generator</h3>
+  <form method="post">{% csrf_token %}
+    <input type="text" name="condition" class="form-control mb-3" placeholder="e.g., diabetes, asthma" required>
+    <button class="btn btn-primary w-100">Get Drug Info</button>
+  </form>
+
+  {% if condition and response %}
+  <div class="mt-4">
+    <div class="p-3 bg-light rounded mb-2"><strong>Condition:</strong> {{ condition }}</div>
+    <div class="p-3 bg-info-subtle border rounded"><strong>AI Recommendation:</strong><br> {{ response }}</div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
