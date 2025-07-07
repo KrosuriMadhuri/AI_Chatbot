@@ -28,5 +28,4 @@ This project demonstrates how Generative AI can assist with **preliminary sympto
 
 ---
 
-## 🗂 Project Structure
 
